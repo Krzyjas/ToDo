@@ -5,8 +5,8 @@ const inputData = {
     fourthElement: '10:00 Call',
 };
 
-const default pageData = {
-    inputData,
+const pageData = {
+    inputData
 };
 
 export default pageData;
