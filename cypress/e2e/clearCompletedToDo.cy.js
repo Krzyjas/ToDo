@@ -7,7 +7,7 @@ import { completedSelectors } from '../support/completedToDoList'
 import { clearCompletedSelectors } from '../support/clearCompletedToDo'
 
 describe('List of completed and clear them', () => {
-  it('List of completed elements', () => {
+  it('List of completed elements to be cleared and check', () => {
     cy.visit(urls.urlToDo);
     cy.get(mainPageSelectors.searchField).should('be.visible');
     cy.get(mainPageSelectors.searchField).click().type(pageData.inputData.firstElement).type('{enter}');

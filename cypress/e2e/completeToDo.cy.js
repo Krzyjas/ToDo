@@ -4,7 +4,7 @@ import { mainPageSelectors } from '../support/addToDo'
 import { completeSelectors } from '../support/completeToDo'
 
 describe('Mark item as completed', () => {
-  it('Add 3 elements', () => {
+  it('Add  elements and choose one to be completed', () => {
     cy.visit(urls.urlToDo);
     cy.get(mainPageSelectors.searchField).should('be.visible');
     cy.get(mainPageSelectors.searchField).click().type(pageData.inputData.firstElement).type('{enter}');

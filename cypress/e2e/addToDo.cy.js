@@ -3,7 +3,7 @@ import urls from '../fixtures/urls'
 import { mainPageSelectors } from '../support/addToDo'
 
 describe('Add items to page To Do', () => {
-  it('Add 3 elements', () => {
+  it('Add 3 elements and check are they exist', () => {
     cy.visit(urls.urlToDo);
     cy.get(mainPageSelectors.searchField).should('be.visible');
     cy.get(mainPageSelectors.searchField).click().type(pageData.inputData.firstElement).type('{enter}');
