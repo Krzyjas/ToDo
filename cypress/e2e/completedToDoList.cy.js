@@ -1,9 +1,8 @@
 import pageData from '../fixtures/inputData'
 import urls from '../fixtures/urls'
-import { mainPageSelectors } from '../support/addToDo'
+import { mainPageSelectors } from '../support/commonToDo'
 import { completeSelectors } from '../support/completeToDo'
 import { activeSelectors } from '../support/activeToDoList'
-import { completedSelectors } from '../support/completedToDoList'
 
 describe('List of completed', () => {
   it('List of completed elements', () => {
@@ -23,7 +22,7 @@ describe('List of completed', () => {
     cy.get(completeSelectors.markedElement).eq(0).should('have.class', 'completed');
 
     // Click 'Completed' only list
-    cy.get(completedSelectors.completedButton).click()
+    cy.get(mainPageSelectors.completedButton).click()
 
     // Check that displayed elements are only 'completed'
     cy.get(activeSelectors.activeElements).should('not.exist');

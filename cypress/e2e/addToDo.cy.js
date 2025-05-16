@@ -1,6 +1,6 @@
 import pageData from '../fixtures/inputData'
 import urls from '../fixtures/urls'
-import { mainPageSelectors } from '../support/addToDo'
+import { mainPageSelectors } from '../support/commonToDo'
 
 describe('Add items to page To Do', () => {
   it('Add 3 elements and check are they exist', () => {

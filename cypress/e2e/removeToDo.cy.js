@@ -1,6 +1,6 @@
 import pageData from '../fixtures/inputData'
 import urls from '../fixtures/urls'
-import { mainPageSelectors } from '../support/addToDo'
+import { mainPageSelectors } from '../support/commonToDo'
 import { removeSelectors } from '../support/removeToDo'
 
 describe('Remove item from page To Do', () => {

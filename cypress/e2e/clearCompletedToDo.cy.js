@@ -1,9 +1,8 @@
 import pageData from '../fixtures/inputData'
 import urls from '../fixtures/urls'
-import { mainPageSelectors } from '../support/addToDo'
+import { mainPageSelectors } from '../support/commonToDo'
 import { completeSelectors } from '../support/completeToDo'
 import { activeSelectors } from '../support/activeToDoList'
-import { completedSelectors } from '../support/completedToDoList'
 import { clearCompletedSelectors } from '../support/clearCompletedToDo'
 
 describe('List of completed and clear them', () => {
@@ -24,21 +23,21 @@ describe('List of completed and clear them', () => {
     cy.get(completeSelectors.markedElement).eq(0).should('have.class', 'completed');
 
     // Click 'Completed' only list
-    cy.get(completedSelectors.completedButton).click()
+    cy.get(mainPageSelectors.completedButton).click()
 
     // Check that displayed elements are only 'completed'
     cy.get(activeSelectors.activeElements).should('not.exist');
     cy.get(activeSelectors.notActiveElements).should('exist');
 
     // Click 'Clear Completed' button
-    cy.get(clearCompletedSelectors.clearCompletedButton).click()
+    cy.get(mainPageSelectors.clearCompletedButton).click()
 
     // Check if completed are located on current list
     cy.get('.completed').should('not.exist');
     cy.get(clearCompletedSelectors.listElement).should('not.exist');
 
     // Check if completed are located on 'All' list
-    cy.get(clearCompletedSelectors.allButton).click();
+    cy.get(mainPageSelectors.allButton).click();
     cy.get(activeSelectors.notActiveElements).should('not.exist');
   })
 })

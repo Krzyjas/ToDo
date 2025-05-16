@@ -1,7 +1,6 @@
 import pageData from '../fixtures/inputData'
 import urls from '../fixtures/urls'
-import { mainPageSelectors } from '../support/addToDo'
-import { counterSelectors } from '../support/counterToDo'
+import { mainPageSelectors } from '../support/commonToDo'
 import { removeSelectors } from '../support/removeToDo'
 
 describe('Test counter', () => {
@@ -12,19 +11,19 @@ describe('Test counter', () => {
     cy.get(mainPageSelectors.elementDisplay).should('contain',pageData.inputData.firstElement)
     
     // Counter shows '1'
-    cy.get(counterSelectors.counterToDo).contains('1')
+    cy.get(mainPageSelectors.counterToDo).contains('1')
 
     cy.get(mainPageSelectors.searchField).click().type(pageData.inputData.secondElement).type('{enter}');
     cy.get(mainPageSelectors.elementDisplay).should('contain',pageData.inputData.secondElement)
 
     // Counter shows '2'
-    cy.get(counterSelectors.counterToDo).contains('2')
+    cy.get(mainPageSelectors.counterToDo).contains('2')
 
     cy.get(mainPageSelectors.searchField).click().type(pageData.inputData.thirdElement).type('{enter}');
     cy.get(mainPageSelectors.elementDisplay).should('contain',pageData.inputData.thirdElement)
 
     // Counter shows '3'
-    cy.get(counterSelectors.counterToDo).contains('3')
+    cy.get(mainPageSelectors.counterToDo).contains('3')
 
     // Remove one element
     cy.get(removeSelectors.listElements).contains(pageData.inputData.firstElement).parent()
@@ -32,6 +31,6 @@ describe('Test counter', () => {
       .click({ force: true });
     
     // Counter shows '2'
-    cy.get(counterSelectors.counterToDo).contains('2')
+    cy.get(mainPageSelectors.counterToDo).contains('2')
   })
 })

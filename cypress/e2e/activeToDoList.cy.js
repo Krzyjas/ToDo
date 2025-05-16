@@ -1,6 +1,6 @@
 import pageData from '../fixtures/inputData'
 import urls from '../fixtures/urls'
-import { mainPageSelectors } from '../support/addToDo'
+import { mainPageSelectors } from '../support/commonToDo'
 import { completeSelectors } from '../support/completeToDo'
 import { activeSelectors } from '../support/activeToDoList'
 
@@ -22,7 +22,7 @@ describe('Mark item as completed', () => {
     cy.get(completeSelectors.markedElement).eq(0).should('have.class', 'completed');
 
     // Click 'Active' only list
-    cy.get(activeSelectors.activeButton).click()
+    cy.get(mainPageSelectors.activeButton).click()
 
     // Check that displayed elements are only 'active'
     cy.get(activeSelectors.activeElements).should('exist');
