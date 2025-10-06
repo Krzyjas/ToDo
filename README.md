@@ -1,4 +1,4 @@
-*W trakcie tworzenia - brakuej pliku z kommandami
+*W trakcie tworzenia - brakuje pliku z kommandami
 Struktura testow jest ulozona wg przypadkow testowych - kazdy test jednostkowy jest w osobnym pliku i posiada dodatkowy plik z selektorami.
 Model POM ze standardowym drzewem katalogow. 
 Korzytstano z JavaScript + Cypress - pliki z testami z rozszerzeniem .cy.js.
